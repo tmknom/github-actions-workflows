@@ -1,4 +1,4 @@
-# General Template
+# github-actions-workflows
 
 A template repository for any languages that keep clean code.
 
