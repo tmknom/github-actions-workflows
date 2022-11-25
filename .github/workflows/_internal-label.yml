@@ -1,4 +1,4 @@
-name: Label
+name: Internal Label
 on:
   pull_request:
 
