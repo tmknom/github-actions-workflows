@@ -1,8 +1,10 @@
+enhancement:
+  - ".github/workflows/*.yml"
+
 docs:
   - "**/*.md"
 
 chore:
-  - ".github/workflows/*.yml"
   - ".github/*.yml"
   - ".gitignore"
   - ".yamllint.yml"
