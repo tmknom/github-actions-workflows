@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.0
+
+### Exciting New Features 🎉
+
+- Add Docs workflow by @tmknom in https://github.com/tmknom/github-actions-workflows/pull/15
+
+**Full Changelog**: https://github.com/tmknom/github-actions-workflows/compare/v0.1.1...v0.2.0
+
 ## v0.1.1
 
 ### Bug Fixes 🐛
