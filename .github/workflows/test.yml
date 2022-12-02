@@ -1,0 +1,15 @@
+name: Test
+on: push
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: set env
+        run: |
+          set -x
+          echo "TEST_ENV=foo bar" >> $GITHUB_ENV
+          echo "FOO_ENV=bar baz" >> $GITHUB_ENV
+
+      - name: Test
+        uses: tmknom/github-actions-playground@main
