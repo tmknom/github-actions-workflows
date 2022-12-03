@@ -1,5 +1,13 @@
 # Changelog
 
+## v0.2.1
+
+### Bug Fixes 🐛
+
+- Add default shell by @tmknom in https://github.com/tmknom/github-actions-workflows/pull/17
+
+**Full Changelog**: https://github.com/tmknom/github-actions-workflows/compare/v0.2.0...v0.2.1
+
 ## v0.2.0
 
 ### Exciting New Features 🎉
