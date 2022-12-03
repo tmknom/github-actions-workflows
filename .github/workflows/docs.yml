@@ -18,6 +18,9 @@ on:
         description: "The git ref"
 permissions:
   contents: write
+defaults:
+  run:
+    shell: bash
 jobs:
   generate:
     runs-on: ubuntu-latest
