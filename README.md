@@ -1,83 +1,83 @@
 # github-actions-workflows
 
-A template repository for any languages that keep clean code.
+A collection of Reusable Workflows for GitHub Actions
 
 ## Description
 
-N/A
+This repository provides the following Reusable Workflows:
 
-## Usage
+- [Lint Workflow](/.github/workflows/lint.yml)
+- [Docs Workflow](/.github/workflows/docs.yml)
+- [Release Workflow](/.github/workflows/release.yml)
 
-N/A
+## Lint Workflow
 
-## Developer Guide
+### Usage
 
-<!-- markdownlint-disable no-inline-html -->
-<details>
-<summary>Click to see details</summary>
-
-### Requirements
-
-- [GNU Make](https://www.gnu.org/software/make/)
-- [Docker](https://docs.docker.com/get-docker/)
-- [GitHub CLI](https://cli.github.com/)
-
-### Development
-
-N/A
-
-### Test
-
-Run the following command:
-
-```shell
-make test
+```yaml
+jobs:
+  lint:
+    uses: tmknom/github-actions-workflows/.github/workflows/lint.yml@v0
 ```
 
-### CI
+### Inputs
 
-When create a pull request, the following workflows are executed automatically at GitHub Actions.
+N/A
 
-- [Lint Markdown](/.github/workflows/lint-markdown.yml)
-- [Lint YAML](/.github/workflows/lint-yaml.yml)
-- [Lint Action](/.github/workflows/lint-action.yml)
-- [Lint Shell](/.github/workflows/lint-shell.yml)
+### Permissions
 
-### Dependency management
+N/A
 
-Use Dependabot version updates.
-For more information, see [dependabot.yml](/.github/dependabot.yml).
+## Docs Workflow
 
-### Release management
+### Usage
 
-#### 1. Bump up to a new version
-
-Run the following command to bump up.
-
-```shell
-make bump
+```yaml
+jobs:
+  docs:
+    uses: tmknom/github-actions-workflows/.github/workflows/docs.yml@v0
+    with:
+      yaml-file: action.yml
+      markdown-file: README.md
+      ref: ${{ github.event.pull_request.head.ref }}
 ```
 
-This command will execute the following steps:
+### Inputs
 
-1. Update [VERSION](/VERSION)
-2. Commit, push, and create a pull request
-3. Open the web browser automatically for reviewing pull request
+| Name | Description | Type | Default | Required |
+| :--- | :---------- | :--- | :------ | :------: |
+| ref | The git ref | `string` | n/a | yes |
+| markdown-file | The Markdown file for the injection target | `string` | `README.md` | no |
+| yaml-file | The YAML file for the action or the reusable workflow | `string` | `action.yml` | no |
 
-Then review and merge, so the release is ready to go.
+### Permissions
 
-#### 2. Publish the new version
+| Scope | Access |
+| :--- | :---- |
+| contents | write |
 
-Run the following command to publish a new tag at GitHub.
+## Release Workflow
 
-```shell
-make release
+```yaml
+jobs:
+  release:
+    uses: tmknom/github-actions-workflows/.github/workflows/release.yml@v0
+    with:
+      level: ${{ inputs.level }}
 ```
 
-Finally, we can use the new version! :tada:
+### Inputs
 
-</details>
-<!-- markdownlint-enable no-inline-html -->
+| Name | Description | Type | Default | Required |
+| :--- | :---------- | :--- | :------ | :------: |
+| level | bump to [major|minor|patch] | `string` | `minor` | no |
+
+### Permissions
+
+| Scope | Access |
+| :--- | :---- |
+| contents | write |
+| pull-requests | write |
 
 ## Changelog
 
