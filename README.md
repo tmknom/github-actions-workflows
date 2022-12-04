@@ -68,9 +68,9 @@ jobs:
 
 ### Inputs
 
-| Name | Description | Type | Default | Required |
-| :--- | :---------- | :--- | :------ | :------: |
-| level | bump to [major|minor|patch] | `string` | `minor` | no |
+| Name | Description                           | Type | Default | Required |
+| :--- |:--------------------------------------| :--- | :------ | :------: |
+| level | bump to [`major` / `minor` / `patch`] | `string` | `minor` | no |
 
 ### Permissions
 
